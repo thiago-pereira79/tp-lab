@@ -357,6 +357,3 @@ Consulte o arquivo `LICENSE` para mais informações.
 ## 👤 Autor
 
 Desenvolvido por **Thiago Pereira**.
-
-🔗 **Site:** http://tplab.com.br/  
-📧 **E-mail:** t.firmiano.79@gmail.com
