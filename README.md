@@ -17,8 +17,7 @@ O projeto reúne minha trajetória profissional, estudos, experiências, projeto
 
 A proposta do TP LAB é apresentar não apenas o que eu fiz, mas também como penso, estudo, construo e evoluo produtos digitais.
 
-🔗 **Acesse o site:**  
-http://tplab.com.br/
+🔗 **Acesse o site:** http://tplab.com.br/
 
 ---
 
