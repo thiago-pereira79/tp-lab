@@ -642,5 +642,3 @@ Consulte o arquivo [LICENSE](LICENSE) para mais informações.
 ## Autor
 
 Desenvolvido por **Thiago Pereira**.
-
-🔗 **TP LAB:** https://www.tplab.com.br/
