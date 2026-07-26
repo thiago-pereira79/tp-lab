@@ -1,11 +1,6 @@
 import { useTranslation } from '../i18n/useTranslation';
 
-interface HeroProps {
-  onVerProjetos: () => void;
-  onExplorarLab: () => void;
-}
-
-export default function Hero({ onVerProjetos, onExplorarLab }: HeroProps) {
+export default function Hero() {
   const { t } = useTranslation();
   const disciplines = t.hero.disciplines.split(' • ');
 

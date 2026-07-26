@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Header from './Header';
 import { useTranslation } from '../i18n/LanguageContext';
 
@@ -149,11 +149,6 @@ export default function PageLayout({
   };
 
   const theme = getThemeConfig(pageId);
-
-  // Always scroll to absolute top of the page when navigating to an inner page view
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'auto' });
-  }, [pageId]);
 
   return (
     <div className="bg-[#000000] text-zinc-100 min-h-screen flex flex-col justify-between selection:bg-[#30F858]/20 selection:text-white antialiased">

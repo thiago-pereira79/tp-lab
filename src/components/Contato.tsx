@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Linkedin, Github, MessageSquare, Briefcase, Puzzle, BookOpen, Compass, Flag, Layers, Code2, User, ArrowUpRight, Beaker, Globe } from 'lucide-react';
+import { Mail, Linkedin, Github, MessageSquare, Briefcase, Puzzle, ArrowUpRight, Beaker, Globe } from 'lucide-react';
 import { useTranslation } from '../i18n/useTranslation';
 
 export default function Contato() {
@@ -271,7 +271,7 @@ export default function Contato() {
       
       {/* 4 CARDS OF CONTACT GRID */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {content.cards.map((c, i) => {
+        {content.cards.map((c) => {
           const Icon = c.icon;
           return (
             <div 

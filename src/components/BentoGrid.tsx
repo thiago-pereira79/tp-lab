@@ -1,11 +1,8 @@
 import { BookOpen, Briefcase, User, Send, ArrowRight } from 'lucide-react';
 import { useTranslation } from '../i18n/useTranslation';
+import { Link } from 'react-router-dom';
 
-interface BentoGridProps {
-  onCardClick: (sectionId: string) => void;
-}
-
-export default function BentoGrid({ onCardClick }: BentoGridProps) {
+export default function BentoGrid() {
   const { t, language } = useTranslation();
 
   const cards = [
@@ -206,6 +203,14 @@ export default function BentoGrid({ onCardClick }: BentoGridProps) {
     }
   ];
 
+  const cardPaths: Record<string, string> = {
+    'projetos-lab': '/projetos',
+    estudos: '/estudos',
+    experiencia: '/experiencia',
+    sobre: '/sobre',
+    contato: '/contato',
+  };
+
   return (
     <section className="bg-black pt-4 sm:pt-6 pb-12 z-20 relative">
       <div className="max-w-7xl mx-auto px-6">
@@ -262,9 +267,9 @@ export default function BentoGrid({ onCardClick }: BentoGridProps) {
             }
 
             return (
-              <button
+              <Link
                 key={card.id}
-                onClick={() => onCardClick(card.id)}
+                to={cardPaths[card.id]}
                 className={`group flex flex-col justify-between p-7 sm:p-8 rounded-[28px] ${card.bg} transition-all duration-300 shadow-lg cursor-pointer text-left h-[390px] focus:outline-none relative overflow-hidden ring-1 ring-black/5 hover:scale-[1.015] hover:shadow-2xl hover:brightness-[1.03] active:scale-[0.99] w-full sm:w-[calc((100%-24px)/2)] lg:w-[calc((100%-64px)/3)]`}
                 id={`bento-card-${card.id}`}
               >
@@ -310,7 +315,7 @@ export default function BentoGrid({ onCardClick }: BentoGridProps) {
                     </div>
                   )}
                 </div>
-              </button>
+              </Link>
             );
           })}
         </div>

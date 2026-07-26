@@ -1,25 +1,12 @@
-import React, { useState } from 'react';
 import { 
-  ArrowLeft, 
   ArrowRight,
   ArrowUpRight,
   Code2, 
-  Cpu, 
-  Sparkles, 
-  Gamepad2,
-  Tv,
-  Music,
-  Maximize2,
-  Search,
-  Grid,
-  Zap,
-  Mic,
-  Settings,
-  Puzzle,
-  Rocket
+  Settings
 } from 'lucide-react';
 import { useTranslation } from '../i18n/useTranslation';
 import { PROJECTS_DATA } from '../data/projectsData';
+import { Link } from 'react-router-dom';
 
 const projectSectionStyles = {
   content: 'space-y-3 border-0 bg-transparent p-0 rounded-none shadow-none',
@@ -31,25 +18,14 @@ const projectSectionStyles = {
 interface ProjectsProps {
   onPlayGame: (gameId: string) => void;
   activeProjectId?: string | null;
-  onActiveProjectChange?: (id: string | null) => void;
 }
 
-export default function Projects({ onPlayGame, activeProjectId, onActiveProjectChange }: ProjectsProps) {
+export default function Projects({ onPlayGame, activeProjectId }: ProjectsProps) {
   const { language } = useTranslation();
-  const [localActiveId, setLocalActiveId] = useState<string | null>(null);
 
   const ebookUrl = '/ebooks/rituais-de-chumbo.pdf';
 
-  const currentActiveId = activeProjectId !== undefined ? activeProjectId : localActiveId;
-
-  const handleSetActiveId = (id: string | null) => {
-    if (onActiveProjectChange) {
-      onActiveProjectChange(id);
-    } else {
-      setLocalActiveId(id);
-    }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const currentActiveId = activeProjectId || null;
 
   const isPt = language === 'pt';
   const isEs = language === 'es';
@@ -332,9 +308,9 @@ export default function Projects({ onPlayGame, activeProjectId, onActiveProjectC
         {PROJECTS_DATA.map((p) => {
           const IconComp = p.icon;
           return (
-            <div
+            <Link
               key={p.id}
-              onClick={() => handleSetActiveId(p.id)}
+              to={`/projetos/${p.id}`}
               className="bg-[#07080a] border border-zinc-900/90 rounded-2xl p-6 hover:border-[#30F858]/30 hover:shadow-[0_0_20px_rgba(48,248,88,0.05)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between min-h-[290px] cursor-pointer group relative shadow-xl"
               id={`card-${p.id}`}
             >
@@ -401,7 +377,7 @@ export default function Projects({ onPlayGame, activeProjectId, onActiveProjectC
                 className="absolute bottom-0 left-6 right-6 h-[1.5px] max-w-0 group-hover:max-w-full transition-all duration-300 pointer-events-none opacity-80"
                 style={{ backgroundColor: p.color, boxShadow: `0 0 8px ${p.color}` }}
               />
-            </div>
+            </Link>
           );
         })}
       </div>

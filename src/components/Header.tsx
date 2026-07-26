@@ -1,14 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from '../i18n/useTranslation';
+import { Link } from 'react-router-dom';
 
 interface HeaderProps {
   onDownloadCV: () => void;
   onBackToHome?: () => void;
-  onNavigate?: (page: string) => void;
   themeColor?: string;
 }
 
-export default function Header({ onDownloadCV, onBackToHome, onNavigate, themeColor }: HeaderProps) {
+export default function Header({ onDownloadCV, onBackToHome, themeColor }: HeaderProps) {
   const { t, language, setLanguage } = useTranslation();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -43,13 +43,14 @@ export default function Header({ onDownloadCV, onBackToHome, onNavigate, themeCo
         
         {/* Left Side Logo */}
         <div className="flex justify-start items-center">
-          <div 
-            onClick={() => onBackToHome?.()} 
-            className={`flex items-center gap-1 ${onBackToHome ? 'cursor-pointer hover:opacity-80' : ''}`}
+          <Link
+            to="/"
+            aria-label="TP LAB - Início"
+            className="flex items-center gap-1 cursor-pointer hover:opacity-80"
           >
             <span className="font-display font-black text-xl tracking-wider text-white font-sans">TP</span>
             <span className="font-display font-black text-xl tracking-wider text-[#00D0F8] font-sans">LAB</span>
-          </div>
+          </Link>
         </div>
 
         {/* Center Side Back Button */}

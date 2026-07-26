@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { X, RotateCcw, Play, Pause, ChevronUp, ChevronLeft, ChevronDown, ChevronRight, Volume2, VolumeX } from 'lucide-react';
+import { X, RotateCcw, Play, ChevronUp, ChevronLeft, ChevronDown, ChevronRight, Volume2, VolumeX } from 'lucide-react';
 import { safeStorage } from '../utils/storage';
 import { useTranslation } from '../i18n/useTranslation';
 

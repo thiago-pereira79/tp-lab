@@ -31,9 +31,6 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       es: 'es',
     };
     document.documentElement.lang = langMapRoute[language];
-    
-    // Dynamically update document title for SEO
-    document.title = translations[language].seo.title;
   }, [language]);
 
   const value: LanguageContextProps = {

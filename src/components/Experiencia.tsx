@@ -14,11 +14,7 @@ import {
   Database
 } from 'lucide-react';
 
-interface ExperienciaProps {
-  onNavigateToContact?: () => void;
-}
-
-export default function Experiencia({ onNavigateToContact }: ExperienciaProps) {
+export default function Experiencia() {
   const { language } = useTranslation();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -330,7 +326,6 @@ export default function Experiencia({ onNavigateToContact }: ExperienciaProps) {
         <div className="relative border-l border-zinc-900/60 pl-8 ml-3 space-y-8 mt-10">
           {visibleTimeline.map((item, idx) => {
             const styles = getCardStyles(idx);
-            const IconComponent = item.icon;
 
             return (
               <div key={idx} className="relative group w-full">
