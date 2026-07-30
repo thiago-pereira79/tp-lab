@@ -12,7 +12,7 @@ const projectSectionStyles = {
   content: 'space-y-3 border-0 bg-transparent p-0 rounded-none shadow-none',
   title: 'text-[#30F858] font-mono text-xs font-black uppercase tracking-wider flex items-center gap-2',
   marker: 'w-1.5 h-1.5 rounded-full bg-[#30F858] shrink-0',
-  body: 'text-zinc-300 font-sans text-[15px] sm:text-base leading-[1.65] font-semibold whitespace-pre-line text-left [text-wrap:pretty] break-words',
+  body: 'text-justified-balanced text-zinc-300 font-sans text-[15px] sm:text-base leading-[1.65] font-semibold whitespace-pre-line',
 } as const;
 
 interface ProjectsProps {
@@ -125,7 +125,7 @@ export default function Projects({ onPlayGame, activeProjectId }: ProjectsProps)
              {getProjectTitle(p)}
           </h1>
           
-          <p className="text-zinc-400 font-sans text-[15px] sm:text-lg max-w-3xl leading-[1.65] font-semibold text-left [text-wrap:pretty] break-words">
+          <p className="text-justified-balanced text-zinc-400 font-sans text-[15px] sm:text-lg max-w-3xl leading-[1.65] font-semibold">
              {isPt ? p.shortDesc.pt : isEs ? p.shortDesc.es : p.shortDesc.en}
           </p>
         </div>
@@ -343,7 +343,7 @@ export default function Projects({ onPlayGame, activeProjectId }: ProjectsProps)
                   {getProjectTitle(p)}
                 </h3>
 
-                <p className="text-zinc-400 font-sans text-[14px] sm:text-[15px] leading-[1.6] font-semibold mt-2 line-clamp-3 text-left [text-wrap:pretty] break-words">
+                <p className="text-justified-balanced text-zinc-400 font-sans text-[14px] sm:text-[15px] leading-[1.6] font-semibold mt-2 line-clamp-3">
                   {isPt ? p.shortDesc.pt : isEs ? p.shortDesc.es : p.shortDesc.en}
                 </p>
               </div>
@@ -395,7 +395,7 @@ export default function Projects({ onPlayGame, activeProjectId }: ProjectsProps)
                 <h3 className="font-sans font-black text-lg text-[#30F858] uppercase tracking-wider">
                   {ui.process}
                 </h3>
-                <p className="text-zinc-500 font-sans text-[14px] sm:text-[15px] leading-[1.6] font-semibold max-w-sm [text-wrap:pretty] break-words">
+                <p className="text-justified-balanced max-w-[250px] text-zinc-500 font-sans text-[14px] sm:text-[15px] leading-[1.6] font-semibold">
                   {ui.processDescription}
                 </p>
               </div>

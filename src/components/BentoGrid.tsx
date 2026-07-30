@@ -1,6 +1,56 @@
 import { BookOpen, Briefcase, User, Send, ArrowRight } from 'lucide-react';
 import { useTranslation } from '../i18n/useTranslation';
 import { Link } from 'react-router-dom';
+import type { CSSProperties } from 'react';
+
+type HomeCardContentProps = {
+  cardId: string;
+  titleLines: readonly string[];
+  items: readonly string[];
+  textClass: string;
+  descriptionClass: string;
+  bulletColor: string;
+  language: 'pt' | 'en' | 'es';
+};
+
+function HomeCardContent({
+  cardId,
+  titleLines,
+  items,
+  textClass,
+  descriptionClass,
+  bulletColor,
+  language,
+}: HomeCardContentProps) {
+  return (
+    <div className="home-card-content">
+      <h3 className={`home-card-title ${textClass}`}>
+        {cardId === 'tp-lab-card' ? (
+          language === 'pt' ? (
+            <>BEM-<span className="text-[#30F858]">VINDO</span></>
+          ) : language === 'es' ? (
+            <>BIEN<span className="text-[#30F858]">VENIDO</span></>
+          ) : (
+            <>WEL<span className="text-[#30F858]">COME</span></>
+          )
+        ) : (
+          titleLines.map((line) => (
+            <span key={line} className="block">{line}</span>
+          ))
+        )}
+      </h3>
+
+      <ul
+        className={`home-card-list ${descriptionClass}`}
+        style={{ '--home-card-bullet-color': bulletColor } as CSSProperties}
+      >
+        {items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export default function BentoGrid() {
   const { t, language } = useTranslation();
@@ -10,7 +60,7 @@ export default function BentoGrid() {
       id: 'tp-lab-card',
       number: '06',
       titleLines: [t.cards.tpLab.title],
-      text: t.cards.tpLab.text,
+      items: t.cards.tpLab.items,
       badgeText: '',
       badgeClass: '',
       bg: 'bg-[#121315] border border-zinc-900/80',
@@ -18,6 +68,7 @@ export default function BentoGrid() {
       iconIsCustom: true,
       isNotClickable: true,
       descColor: 'text-zinc-400 font-medium',
+      bulletColor: '#30F858',
       iconColor: 'border-[#30F858]/20 bg-zinc-900/50 shadow-[0_0_15px_rgba(48,248,88,0.15)] text-[#30F858]',
       decorText: t.cards.tpLab.decor,
       ornaments: (
@@ -48,7 +99,7 @@ export default function BentoGrid() {
       id: 'projetos-lab',
       number: '01',
       titleLines: [t.cards.projetosLab.title.replace(/\s*\+\s*LAB$/, ''), '+ LAB'],
-      text: t.cards.projetosLab.text,
+      items: t.cards.projetosLab.items,
       badgeText: 'BUILD',
       badgeClass: 'bg-zinc-950 text-[#30F858] border border-zinc-900',
       bg: 'bg-[#30F858]',
@@ -56,6 +107,7 @@ export default function BentoGrid() {
       iconIsCustom: true,
       arrowColor: 'border-zinc-950 text-zinc-950 hover:bg-zinc-950 hover:text-[#30F858]',
       descColor: 'text-zinc-900/85 font-semibold',
+      bulletColor: '#09090B',
       iconColor: 'text-zinc-950 border-zinc-950/20 bg-zinc-950/5',
       ornaments: (
         <>
@@ -82,7 +134,7 @@ export default function BentoGrid() {
       id: 'estudos',
       number: '02',
       titleLines: [t.cards.estudos.title],
-      text: t.cards.estudos.text,
+      items: t.cards.estudos.items,
       badgeText: 'LEARN',
       badgeClass: 'bg-zinc-950 text-[#A898E0] border border-zinc-900',
       bg: 'bg-[#A898E0]', // soft purple standard
@@ -91,6 +143,7 @@ export default function BentoGrid() {
       icon: BookOpen,
       arrowColor: 'border-zinc-950 text-zinc-950 hover:bg-zinc-950 hover:text-[#A898E0]',
       descColor: 'text-zinc-900/85 font-semibold',
+      bulletColor: '#18181B',
       iconColor: 'text-zinc-950 border-zinc-950/20 bg-zinc-950/5',
       ornaments: (
         <>
@@ -111,7 +164,7 @@ export default function BentoGrid() {
       id: 'experiencia',
       number: '03',
       titleLines: [t.cards.experiencia.title],
-      text: t.cards.experiencia.text,
+      items: t.cards.experiencia.items,
       badgeText: 'WORK',
       badgeClass: 'bg-[#121315] text-[#00D0F8] border border-[#00D0F8]/20',
       bg: 'bg-[#121315] border border-zinc-900/80', // elegant deep charcoal metal
@@ -120,6 +173,7 @@ export default function BentoGrid() {
       icon: Briefcase,
       arrowColor: 'border-[#00D0F8]/50 text-[#00D0F8] hover:bg-[#00D0F8] hover:text-zinc-950 hover:border-[#00D0F8]',
       descColor: 'text-zinc-400 font-medium',
+      bulletColor: '#00D0F8',
       iconColor: 'text-[#00D0F8] border-[#00D0F8]/25 bg-zinc-950/50',
       ornaments: (
         <>
@@ -142,7 +196,7 @@ export default function BentoGrid() {
       id: 'sobre',
       number: '04',
       titleLines: [t.cards.sobre.title],
-      text: t.cards.sobre.text,
+      items: t.cards.sobre.items,
       badgeText: '★',
       badgeClass: 'absolute right-[-10px] top-[148px] bg-zinc-950 text-[#eaeaea] w-7 h-7 flex items-center justify-center rounded-lg border border-zinc-800 rotate-[-8deg] font-black pointer-events-none select-none shadow-lg',
       bg: 'bg-[#eaeaea]', // clean industrial off-white
@@ -151,6 +205,7 @@ export default function BentoGrid() {
       icon: User,
       arrowColor: 'border-zinc-950 text-zinc-950 hover:bg-zinc-950 hover:text-[#eaeaea]',
       descColor: 'text-zinc-900/85 font-semibold',
+      bulletColor: '#52525B',
       iconColor: 'text-zinc-950 border-zinc-950/20 bg-zinc-950/5',
       ornaments: (
         <>
@@ -170,7 +225,7 @@ export default function BentoGrid() {
       id: 'contato',
       number: '05',
       titleLines: [t.cards.contato.title],
-      text: t.cards.contato.text,
+      items: t.cards.contato.items,
       badgeText: 'REACH OUT',
       badgeClass: 'bg-zinc-950 text-[#b3d3c4] border border-[#b3d3c4]/10',
       bg: 'bg-[#b3d3c4]', // mint pastel green
@@ -179,6 +234,7 @@ export default function BentoGrid() {
       icon: Send,
       arrowColor: 'border-zinc-950 text-zinc-950 hover:bg-zinc-950 hover:text-[#b3d3c4]',
       descColor: 'text-zinc-900/85 font-semibold',
+      bulletColor: '#166534',
       iconColor: 'text-zinc-950 border-zinc-950/20 bg-zinc-950/5',
       ornaments: (
         <>
@@ -224,7 +280,7 @@ export default function BentoGrid() {
               return (
                 <div
                   key={card.id}
-                  className={`flex flex-col justify-between p-7 sm:p-8 rounded-[28px] ${card.bg} transition-all duration-300 shadow-lg text-left h-[390px] relative overflow-hidden ring-1 ring-black/5 w-full sm:w-[calc((100%-24px)/2)] lg:w-[calc((100%-64px)/3)]`}
+                  className={`home-card-layout p-7 sm:p-8 rounded-[28px] ${card.bg} transition-all duration-300 shadow-lg text-left h-[390px] relative overflow-hidden ring-1 ring-black/5 w-full sm:w-[calc((100%-24px)/2)] lg:w-[calc((100%-64px)/3)]`}
                   id={`bento-card-${card.id}`}
                 >
                   {/* Visual Ornaments */}
@@ -239,21 +295,15 @@ export default function BentoGrid() {
                     </div>
                   </div>
 
-                  {/* Card Main Texts */}
-                  <div className="mt-4 mb-2 relative z-10 w-full">
-                    <h3 className={`font-sans font-black text-2xl sm:text-[25px] tracking-tight uppercase leading-[0.95] block mb-2.5 ${card.textClass}`}>
-                      {language === 'pt' ? (
-                        <>BEM-<span className="text-[#30F858]">VINDO</span></>
-                      ) : language === 'es' ? (
-                        <>BIEN<span className="text-[#30F858]">VENIDO</span></>
-                      ) : (
-                        <>WEL<span className="text-[#30F858]">COME</span></>
-                      )}
-                    </h3>
-                    <p className={`font-sans text-[14px] sm:text-[15px] leading-[1.6] max-w-[210px] [text-wrap:pretty] break-words ${card.descColor}`}>
-                      {card.text}
-                    </p>
-                  </div>
+                  <HomeCardContent
+                    cardId={card.id}
+                    titleLines={card.titleLines}
+                    items={card.items}
+                    textClass={card.textClass}
+                    descriptionClass={card.descColor}
+                    bulletColor={card.bulletColor}
+                    language={language}
+                  />
 
                   {/* Bottom Row: Static decor list with subtle top separator border */}
                   <div className={`flex flex-col ${card.id === 'tp-lab-card' ? 'items-center text-center' : 'items-start'} w-full relative z-10`}>
@@ -270,7 +320,7 @@ export default function BentoGrid() {
               <Link
                 key={card.id}
                 to={cardPaths[card.id]}
-                className={`group flex flex-col justify-between p-7 sm:p-8 rounded-[28px] ${card.bg} transition-all duration-300 shadow-lg cursor-pointer text-left h-[390px] focus:outline-none relative overflow-hidden ring-1 ring-black/5 hover:scale-[1.015] hover:shadow-2xl hover:brightness-[1.03] active:scale-[0.99] w-full sm:w-[calc((100%-24px)/2)] lg:w-[calc((100%-64px)/3)]`}
+                className={`home-card-layout group p-7 sm:p-8 rounded-[28px] ${card.bg} transition-all duration-300 shadow-lg cursor-pointer text-left h-[390px] focus:outline-none relative overflow-hidden ring-1 ring-black/5 hover:scale-[1.015] hover:shadow-2xl hover:brightness-[1.03] active:scale-[0.99] w-full sm:w-[calc((100%-24px)/2)] lg:w-[calc((100%-64px)/3)]`}
                 id={`bento-card-${card.id}`}
               >
                 {/* Visual Ornaments */}
@@ -289,17 +339,15 @@ export default function BentoGrid() {
                   </div>
                 </div>
 
-                {/* Card Main Texts: Split title lines if necessary */}
-                <div className="mt-4 mb-2 relative z-10 w-full">
-                  <h3 className={`font-sans font-black text-2xl sm:text-[25px] tracking-tight uppercase leading-[0.95] block mb-2.5 ${card.textClass}`}>
-                    {card.titleLines.map((line, idx) => (
-                      <span key={idx} className="block">{line}</span>
-                    ))}
-                  </h3>
-                  <p className={`font-sans text-[14px] sm:text-[15px] leading-[1.6] max-w-[210px] [text-wrap:pretty] break-words ${card.descColor}`}>
-                    {card.text}
-                  </p>
-                </div>
+                <HomeCardContent
+                  cardId={card.id}
+                  titleLines={card.titleLines}
+                  items={card.items}
+                  textClass={card.textClass}
+                  descriptionClass={card.descColor}
+                  bulletColor={card.bulletColor}
+                  language={language}
+                />
 
                 {/* Bottom Row: Hoverable circular arrow button, Tilted badge label */}
                 <div className="flex items-end justify-between w-full relative z-10">

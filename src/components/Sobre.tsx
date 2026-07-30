@@ -236,7 +236,7 @@ export default function Sobre() {
           </p>
           <div className="space-y-3">
             {content.subParagraphs.map((paragraph, idx) => (
-              <p key={idx} className="text-zinc-400 font-sans text-[15px] sm:text-base leading-[1.65] font-semibold max-w-xl text-left [text-wrap:pretty] break-words">
+              <p key={idx} className="text-justified-balanced text-zinc-400 font-sans text-[15px] sm:text-base leading-[1.65] font-semibold max-w-xl">
                 {paragraph}
               </p>
             ))}
@@ -276,7 +276,7 @@ export default function Sobre() {
                   <h4 className="font-sans font-black text-xs sm:text-sm text-white uppercase tracking-wider">
                     {ph.title}
                   </h4>
-                  <p className="text-zinc-400 font-sans text-[14px] sm:text-[15px] leading-[1.6] font-semibold text-left [text-wrap:pretty] break-words">
+                  <p className="text-justified-balanced text-zinc-400 font-sans text-[14px] sm:text-[15px] leading-[1.6] font-semibold">
                     {ph.desc}
                   </p>
                 </div>
@@ -320,7 +320,7 @@ export default function Sobre() {
                 <h4 className="font-sans font-black text-xs sm:text-sm text-white uppercase tracking-wider">
                   {v.title}
                 </h4>
-                <p className="text-zinc-400 font-sans text-[14px] sm:text-[15px] leading-[1.6] font-semibold text-left [text-wrap:pretty] break-words">
+                <p className="text-justified-balanced max-w-[220px] text-zinc-400 font-sans text-[14px] sm:text-[15px] leading-[1.6] font-semibold">
                   {v.desc}
                 </p>
               </div>
@@ -361,7 +361,7 @@ export default function Sobre() {
                     {st.title}
                   </h4>
                   <div className="h-5 w-[1px] bg-zinc-850 shrink-0" />
-                  <p className="text-zinc-400 font-sans text-[14px] md:text-[15px] leading-[1.6] font-semibold text-left [text-wrap:pretty] break-words">
+                  <p className="text-justified-balanced text-zinc-400 font-sans text-[14px] md:text-[15px] leading-[1.6] font-semibold">
                     {st.desc}
                   </p>
                 </div>
@@ -371,7 +371,7 @@ export default function Sobre() {
                   <h4 className="font-sans font-black text-xs text-white uppercase tracking-wider">
                     {st.title}
                   </h4>
-                  <p className="text-zinc-400 font-sans text-[14px] leading-[1.6] font-semibold text-left [text-wrap:pretty] break-words">
+                  <p className="text-justified-balanced text-zinc-400 font-sans text-[14px] leading-[1.6] font-semibold">
                     {st.desc}
                   </p>
                 </div>

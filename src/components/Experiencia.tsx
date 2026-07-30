@@ -357,7 +357,7 @@ export default function Experiencia() {
                     <p className={`font-sans text-xs sm:text-[13px] font-black tracking-wide uppercase ${styles.textColor}`}>
                       {item.role}
                     </p>
-                    <p className="text-zinc-400 font-sans text-[14px] sm:text-[15px] leading-[1.65] font-semibold text-left [text-wrap:pretty] break-words">
+                    <p className="text-justified-balanced text-zinc-400 font-sans text-[14px] sm:text-[15px] leading-[1.65] font-semibold">
                       {item.desc}
                     </p>
                   </div>
@@ -443,7 +443,7 @@ export default function Experiencia() {
 
               <div className="space-y-1.5 mt-4">
                 <h4 className="font-sans font-black text-xs text-white uppercase tracking-wider">{ar.title}</h4>
-                <p className="text-zinc-400 font-sans text-[14px] sm:text-[15px] leading-[1.6] font-semibold text-left [text-wrap:pretty] break-words">{ar.desc}</p>
+                <p className="text-justified-balanced max-w-[210px] text-zinc-400 font-sans text-[14px] sm:text-[15px] leading-[1.6] font-semibold">{ar.desc}</p>
               </div>
             </div>
           ))}

@@ -295,7 +295,7 @@ export default function Contato() {
                   <Icon className="w-5 h-5 transition-all duration-[220ms] opacity-80 group-hover:opacity-100 group-focus-within:opacity-100" style={{ color: c.color }} />
                 </div>
                 <h4 className="font-sans font-black text-xs tracking-wider text-white uppercase">{c.title}</h4>
-                <p className="text-zinc-400 font-sans text-[14px] sm:text-[15px] leading-[1.6] mt-2 font-medium text-left [text-wrap:pretty] break-words">{c.text}</p>
+                <p className={`text-justified-balanced ${c.id === 'linkedin' ? 'max-w-[220px]' : 'max-w-[240px]'} text-zinc-400 font-sans text-[14px] sm:text-[15px] leading-[1.6] mt-2 font-medium`}>{c.text}</p>
               </div>
               <div className="mt-5 pt-4 border-t border-dashed border-zinc-900/40">
                 <a 
@@ -345,7 +345,7 @@ export default function Contato() {
                   {content.featuredCard.title}
                 </h4>
               </div>
-              <p className="text-zinc-400 font-sans text-[14px] sm:text-[15px] leading-[1.6] font-semibold text-left [text-wrap:pretty] break-words">
+              <p className="text-justified-balanced text-zinc-400 font-sans text-[14px] sm:text-[15px] leading-[1.6] font-semibold">
                 {content.featuredCard.text}
               </p>
             </div>
@@ -395,7 +395,7 @@ export default function Contato() {
                     <Icon className="w-4 h-4 text-[#30F858] transition-all duration-[220ms] opacity-80 group-hover:opacity-100 group-focus-within:opacity-100 group-focus:opacity-100" />
                   </div>
                   <h4 className="font-sans font-black text-xs tracking-wider text-white uppercase">{type.title}</h4>
-                  <p className="text-zinc-400 font-sans text-[14px] sm:text-[15px] leading-[1.6] mt-2 font-medium text-left [text-wrap:pretty] break-words">{type.text}</p>
+                  <p className="text-justified-balanced text-zinc-400 font-sans text-[14px] sm:text-[15px] leading-[1.6] mt-2 font-medium">{type.text}</p>
                 </div>
                 {type.cta && type.link ? (
                   <div

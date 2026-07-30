@@ -15,12 +15,12 @@ import PageLayout from './components/PageLayout';
 import { PROJECTS_DATA } from './data/projectsData';
 
 const pageTitles: Record<string, string> = {
-  '/': 'TP LAB | Thiago Pereira',
-  '/sobre': 'Sobre | TP LAB',
-  '/projetos': 'Projetos + Lab | TP LAB',
-  '/estudos': 'Estudos | TP LAB',
-  '/experiencia': 'Experiência | TP LAB',
-  '/contato': 'Contato | TP LAB',
+  '/': 'TP LAB | Currículo Digital',
+  '/sobre': 'TP LAB | Currículo Digital',
+  '/projetos': 'TP LAB | Currículo Digital',
+  '/estudos': 'TP LAB | Currículo Digital',
+  '/experiencia': 'TP LAB | Currículo Digital',
+  '/contato': 'TP LAB | Currículo Digital',
 };
 
 function RouteEffects() {

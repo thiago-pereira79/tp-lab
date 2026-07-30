@@ -19,15 +19,15 @@ export const translations = {
     cards: {
       projetosLab: {
         title: "PROJETOS + LAB",
-        text: "Jogos, sites e aplicações que desenvolvi."
+        items: ["Jogos", "Sites", "Aplicações"]
       },
       estudos: {
         title: "ESTUDOS",
-        text: "Tecnologias, conceitos e aprendizados em evolução."
+        items: ["Tecnologias", "Conceitos", "Aprendizados"]
       },
       experiencia: {
         title: "EXPERIÊNCIA",
-        text: "Minha trajetória profissional e áreas de atuação."
+        items: ["Trajetória", "Áreas de atuação", "Evolução"]
       },
       curriculo: {
         title: "CURRÍCULO",
@@ -35,15 +35,15 @@ export const translations = {
       },
       sobre: {
         title: "SOBRE",
-        text: "Minha visão, valores e o que me move todos os dias."
+        items: ["Visão", "Valores", "Propósito"]
       },
       contato: {
         title: "CONTATO",
-        text: "Vamos conversar sobre projetos e ideias."
+        items: ["Projetos", "Ideias", "Colaborações"]
       },
       tpLab: {
         title: "BEM-VINDO",
-        text: "Um espaço para explorar ideias, criar interfaces, testar caminhos e transformar aprendizado em experiências digitais.",
+        items: ["Explorar ideias", "Criar interfaces", "Testar caminhos"],
         decor: "CRIAR • TESTAR • CONECTAR • EVOLUIR"
       }
     },
@@ -248,15 +248,15 @@ export const translations = {
     cards: {
       projetosLab: {
         title: "PROJECTS + LAB",
-        text: "Games, websites and applications I have built."
+        items: ["Games", "Websites", "Applications"]
       },
       estudos: {
         title: "STUDIES",
-        text: "Technologies, concepts, and continuous learning."
+        items: ["Technologies", "Concepts", "Learning"]
       },
       experiencia: {
         title: "EXPERIENCE",
-        text: "My professional journey and areas of expertise."
+        items: ["Career path", "Areas of expertise", "Growth"]
       },
       curriculo: {
         title: "RESUME",
@@ -264,15 +264,15 @@ export const translations = {
       },
       sobre: {
         title: "ABOUT",
-        text: "My vision, values and what drives me every day."
+        items: ["Vision", "Values", "Purpose"]
       },
       contato: {
         title: "CONTACT",
-        text: "Let's talk about projects and ideas."
+        items: ["Projects", "Ideas", "Collaborations"]
       },
       tpLab: {
         title: "WELCOME",
-        text: "A space to explore ideas, create interfaces, test paths, and transform learning into digital experiences.",
+        items: ["Explore ideas", "Create interfaces", "Test paths"],
         decor: "CREATE • TEST • CONNECT • EVOLVE"
       }
     },
@@ -477,15 +477,15 @@ export const translations = {
     cards: {
       projetosLab: {
         title: "PROYECTOS + LAB",
-        text: "Juegos, sitios web y aplicaciones que desarrollé."
+        items: ["Juegos", "Sitios web", "Aplicaciones"]
       },
       estudos: {
         title: "ESTUDIOS",
-        text: "Tecnologías, conceptos y aprendizajes en evolución."
+        items: ["Tecnologías", "Conceptos", "Aprendizajes"]
       },
       experiencia: {
         title: "EXPERIENCIA",
-        text: "Mi trayectoria profesional y áreas de especialización."
+        items: ["Trayectoria", "Áreas de actuación", "Evolución"]
       },
       curriculo: {
         title: "CURRÍCULUM",
@@ -493,15 +493,15 @@ export const translations = {
       },
       sobre: {
         title: "SOBRE MÍ",
-        text: "Mi visión, mis valores y lo que me motiva cada día."
+        items: ["Visión", "Valores", "Propósito"]
       },
       contato: {
         title: "CONTACTO",
-        text: "Hablemos sobre proyectos e ideas."
+        items: ["Proyectos", "Ideas", "Colaboraciones"]
       },
       tpLab: {
         title: "BIENVENIDO",
-        text: "Un espacio para explorar ideas, crear interfaces, probar caminos y transformar el aprendizaje en experiencias digitales.",
+        items: ["Explorar ideas", "Crear interfaces", "Probar caminos"],
         decor: "CREAR • PROBAR • CONECTAR • EVOLUCIONAR"
       }
     },
